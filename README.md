@@ -1,5 +1,5 @@
 
-# Bringing It All Together
+## Bringing It All Together: Data Analysis and Visualization in Python
 
 ## Introduction
 
@@ -82,7 +82,7 @@ data[0]
 
 
 
-Wow, that is a lot of information! We can see that this is a dictionary representing one of the groups we've pulled from the Meetup API. All of the groups will take this same form, that is they will have the same keys (i.e. description, state, city, lat, lon, category, topics, etc.) We can more easily see a list of keys by using the keys() method we've used in earlier labs. 
+Wow, that is a lot of information! We can see that the first element of the `data` list is a dictionary representing one of the groups we've pulled from the Meetup API. Each group will take this same form, that is they will have the same keys (i.e. description, state, city, lat, lon, category, topics, etc.) We can more easily see a list of keys by using the keys() method we've used in earlier labs. 
 
 
 ```python
@@ -96,11 +96,11 @@ data[0].keys()
 
 
 
-Great! we have an idea what we're working with now. How can we use this data to answer some of our questions from above? Let's start with finding out which cities have the most python groups. 
+Great! we have an idea of what we're working with now. How can we use this data to answer some of our questions from above? Let's start with finding out which cities have the most python groups. 
 
 We can do this by creating a dictionary and giving it keys for each city in our list of groups that we have imported as the variable, `data`.
 
-Let's write a function that will do this for us and call it `create_cities_dictionary`, which should return a dictionary with keys for each city that point to arrays with all the meetup groups in that city.
+Let's write a function that will do this for us and call it `create_cities_dictionary`, which should return a dictionary with keys for each city that point to lists with all the meetup groups in that city.
 
 
 ```python
@@ -134,9 +134,9 @@ cities_keys
 
 Looks like we've picked up a couple of extra cities! So far, we know that all of these cities have at least one group that focuses on Python. Let's dig and figure out how these cities compare.
 
-Write a method that returns an array of values which represent the number of groups in each city. Let's call it `tabulate_num_groups`. It should take a parameter of a dictionary, in this case our cities_dict, and return an array of the number of groups each city has.
+Write a method that returns a list of values which represent the number of groups in each city. Let's call it `tabulate_num_groups`. It should take a parameter of a dictionary, in this case our cities_dict, and return a list of the number of groups each city has.
 
-> **Hint:** to make this more programmatic, you might think about using one of the functions we introduced that iterates over a collection, operates on each element and returns an array of the same length.
+> **Hint:** to make this more programmatic, you might think about using one of the functions we introduced that iterates over a collection, operates on each element and returns a list of the same length.
 
 
 ```python
@@ -262,7 +262,7 @@ python_map
 
 
 Okay, very cool but boring. Let's start adding markers to our map.
-We can make markers by calling folium.Marker and passing in an array with the latitude and longitude of the thing we are trying to mark (e.g. `folium.Marker([latitude], [longitude])`). Let's write a function that takes in our active groups and adds a marker to our map. This function should be called `add_markers` and take in two parameters; a list of groups and the map to which you would like to add the marker.
+We can make markers by calling folium.Marker and passing in a list with the latitude and longitude of the thing we are trying to mark (e.g. `folium.Marker([latitude], [longitude])`). Let's write a function that takes in our active groups and adds a marker to our map. This function should be called `add_markers` and take in two parameters; a list of groups and the map to which you would like to add the marker.
 
 
 ```python
@@ -334,4 +334,4 @@ Woah! Okay, so we've got another piece of data to add to our analysis. It looks 
 
 ### Summary
 
-In this lab, we used our skills to map, filter, chart, and plot data. We wrote functions to parse through hundreds of Meetup groups to find the ones that gave us the most relevant information. Then we created visualizations to help us make decisions based on our data. 
+In this lab, we used our skills to map, filter, chart, and plot data. We wrote functions to parse through hundreds of Meetup groups to find the ones that gave us the most relevant information. Finally we consolidated our data and created visualizations to help us make decisions based on this data.
